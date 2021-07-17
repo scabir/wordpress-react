@@ -1,16 +1,164 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.siteMain {
+  max-width: 1200px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+.header {
+  width: 100%;
   box-sizing: border-box;
+  min-height: 120px;
+  display: block;
+  padding: 10px 10px;
+  border:1px solid  #666666; 
+}
+
+.topMenu {
+  width: 100%;
+  padding: 10px 10px;
+  border:1px solid  #666666; 
+  display:grid;
+  text-align: center;
+}
+
+.topMenu a {
+  padding: 10px;
+  margin: 10px;
+  border:1px solid  #666666; 
+  border-radius: 10px;
+}
+
+.topMenu span :hover {
+  background-color: #2b3de6;
+  color: #FFFFFF;
+}
+
+.topMenu .navigation {
+  float: left;
+  width: 80%;
+}
+
+.topMenu .searchContainer {
+  height: 30px;
+}
+
+.activeLink {
+  background-color: #2b3de6;
+  color: #FFFFFF;
+  padding: 3px;
+}
+
+.content {
+  width: 100%; 
+}
+
+.content area {
+  width: 100%;
+  display:block;  
+}
+
+.sidemenu {
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width: 25%;
+  height: auto;
+  border:1px solid  #666666; 
+}
+
+
+.mainbody {
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width: 75%;
+  border:1px solid  #666666; 
+  height: auto;
+  padding: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidemenu {
+    display: none;
+  }
+
+  .topMenu {
+    display: none;
+  }
+
+  .mainbody {
+    width: 100%;
+  }
+}
+
+.footer {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  background-color:white;
+  display:grid;
+  border:1px solid  #666666; 
+  text-align: center;
+}
+
+.singlePost {
+  min-height: 20px;
+  display: block;
+  padding: 10px 10px;
+  margin: 5px;
+  border: 1px solid #999999;
+  box-shadow: 5px;
+  border-radius: 5px;
+
+}
+
+.singlePost .dateField {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.comments {
+  border: 1px solid #999999;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #EFEFEF;
+}
+
+.comment {
+  border: 1px solid #999999;
+  font-size: 0.9rem;
+  padding: 10px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.routerLink {
+  cursor: pointer;
+}
+
+.widget {
+  padding: 10px 10px;
+  margin: 5px;
+
+}
+
+.widget h5 {
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  padding: 5px;
+}
+
+.pagination {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.postRead {
+  margin: 1px 1px;
+  text-align: left;
+}
+
+.postRead .date{
+  font-weight: bold;
+  font-size:0.8em;
 }

@@ -1,0 +1,8 @@
+{
+    "wp": {
+        "baseUrl": "http://www.suleyman.cc/wp-json/wp/v2",
+        "postCount": 10,
+        "footerNote": "React Simple WP",
+        "pageIdsToBeExcluded": "24"
+    }
+}
