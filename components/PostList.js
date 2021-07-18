@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import Link from 'next/dist/client/link'; 
+import { useRouter } from "next/router";
+
 import SinglePost from './SinglePost';
 import configData from '../config.json';
 import ErrorPage from './ErrorPage';
-import Link from 'next/dist/client/link'; 
 
 const PostList = (props) => {
     const [posts, setPosts] = useState([]);
@@ -10,18 +12,19 @@ const PostList = (props) => {
     let url = configData.wp.baseUrl + '/posts';
     let didFilterAdded = false;
     let perPage = configData.wp.postCount;
-    // let query = new URLSearchParams(useLocation().search);
+    const { query } = useRouter();
+
     let page = 1;
     let errorContent = undefined;
 
-    // if(query.get("page")) {
-    //     try {
-    //         page = parseInt(query.get("page"));
-    //     }
-    //     catch {
-    //         errorContent = <ErrorPage />
-    //     }
-    // }
+    if(query.page) {
+        try {
+            page = parseInt(query.page);
+        }
+        catch {
+            errorContent = <ErrorPage />
+        }
+    }
 
     if(props.filter !== undefined) {
         url = url + props.filter;
@@ -67,12 +70,13 @@ const PostList = (props) => {
 
         let prevPart = '<< Prev';
         let nextPart = 'Next >>';
+        
 
         if(page > 2) {
             prevPart = <Link href={window.location.pathname + '?page=' + (page - 1)}>{'<< Prev'}</Link>;
         }
         else if((page) === 2) {
-            prevPart = <Link href={window.location.pathname}>{'<<'} Prev</Link>;
+            prevPart = <Link href={window.location.pathname}>{'<< Prev'}</Link>;
         }
 
         if(posts?.length === perPage) {

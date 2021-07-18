@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import ConfigData from '../config.json';
+import HtmlRender from './HtmlRender';
 
 const Header = () => {
     const [pageInfo, setPageInfo] = useState({title:'', descriptiton:''});
@@ -25,7 +26,7 @@ const Header = () => {
     return (        
         <Fragment>
             <h1>{pageInfo.title}</h1>
-            <p>{pageInfo.descriptiton}</p>
+            <p><HtmlRender>{pageInfo.descriptiton}</HtmlRender></p>
         </Fragment>
     );
 }

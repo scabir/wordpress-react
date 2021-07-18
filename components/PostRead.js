@@ -1,10 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
-
-import renderHTML from 'react-render-html';
 import CategoryBadge from './CategoryBadge';
 import TagBadge from './TagBadge';
+import HtmlRender from './HtmlRender';
 import configData from '../config.json';
-//import Comments from '../../components/Comments/Comments';
+import Comments from './Comments';
 
 const PostRead = (props) => {
     const [posts, setPost] = useState([]);
@@ -34,12 +33,12 @@ const PostRead = (props) => {
                     <h2>{post.title.rendered}</h2>
                     <p className="date">{post.date}</p>
                     <div>
-                        {renderHTML(post.content.rendered)}
+                        <HtmlRender>{post.content.rendered}</HtmlRender>
                     </div>
                     <CategoryBadge categories={post.categories} postid={post.id} />
                     <TagBadge tags={post.tags}  postid={post.id}/>
                 </div>
-                {/* {post.comment_status === 'open' && <Comments postid={post.id} />} */}
+                {post.comment_status === 'open' && <Comments postid={post.id} />}
                 {post.comment_status === 'closed' && <p>This post is closed to comments</p>}
             </Fragment>
         );
