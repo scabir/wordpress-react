@@ -15,9 +15,6 @@ const CategoriesWidget = (props) => {
           );
     });
 
-    console.log('catts hit');
-    console.log(reduxState);
-
     return (
         <div className="widget">
             <h5>Categories</h5>
