@@ -1,5 +1,6 @@
 import React, {useState, useEffect, Fragment } from 'react';
 import configData from '../config.json';
+import HtmlRender from './HtmlRender';
 
 const Comments = (props) => {
     const [comments, setComments] = useState([]);
@@ -35,7 +36,7 @@ const Comments = (props) => {
             return (
                 <div className="comment">
                     <p><i><strong>{comment.author_name}</strong></i> says <strong>on </strong>{comment.date}: </p>
-                    <p>{renderHTML(comment.content.rendered)}</p>
+                    <p><HtmlRender>{comment.content.rendered}</HtmlRender></p>
                 </div>
             );
         });
