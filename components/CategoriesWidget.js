@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import {useSelector} from 'react-redux';
-import Link from 'next/dist/client/link'; 
+import Link from 'next/dist/client/link';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const CategoriesWidget = (props) => {
     const reduxState = useSelector(state => state.categories);    

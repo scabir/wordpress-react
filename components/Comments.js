@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import configData from '../config.json';
 import HtmlRender from './HtmlRender';
 
@@ -22,8 +22,6 @@ const Comments = (props) => {
     useEffect(() => {
         getPostsHandler();
     }, [url]);
-
-    console.log(comments);
     
     let content = <p>No comments</p>;
 

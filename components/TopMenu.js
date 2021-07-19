@@ -1,12 +1,8 @@
-import React, { Fragment, useEffect } from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import Link from 'next/link'
-
-import SearchBox from './SearchBox';
-import FetchAllFromWeb from '../store/FetchFromWeb';
+import Link from 'next/link';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import ConfigData from '../config.json';
-import {pagesActions} from '../store/Store';
-import { fetchPages } from '../store/Fetchers';
+import SearchBox from './SearchBox';
 
 const TopMenu = (props) => {
     const baseUrl = ConfigData.wp.baseUrl;    

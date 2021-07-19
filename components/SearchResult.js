@@ -12,12 +12,11 @@ const SearchResult = (props) => {
     const getSearchResultsHandler = async () => {
         const response = await fetch(url);
         const data = await response.json();
-        console.log('hit');
         
         setResult(data);
         setIsLoading(false);
     }
-    
+
     useEffect(() => {
         getSearchResultsHandler();
     }, [url]);

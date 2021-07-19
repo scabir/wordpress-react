@@ -1,7 +1,6 @@
-import React from 'react';
 import { useRouter } from 'next/router';
+import React from 'react';
 import BlogLayout from '../../components/BlogLayout';
-import PostList from '../../components/PostList';
 import ErrorPage from '../../components/ErrorPage';
 import PageRead from '../../components/PageRead';
 
@@ -14,8 +13,6 @@ const PageReadPage = (props) => {
     }
 
     const id = parameters[0];
-
-    console.log(id);
     
     return (
         <BlogLayout>
